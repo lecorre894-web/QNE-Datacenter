@@ -1,0 +1,7 @@
+build/
+*.node
+*.o
+.env
+*.pem
+*.key
+node_modules/
