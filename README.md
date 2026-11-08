@@ -67,3 +67,21 @@ Les résultats proviennent des journaux de benchmark exécutés sur le Ryzen. Il
 Les sources originales ne sont pas modifiées par la publication. Les binaires compilés et les secrets sont exclus du dépôt.
 
 Aucune licence ouverte n'est accordée sans fichier de licence explicite.
+
+## Reproduction autonome — 8 novembre 2026
+
+Le depot inclut les dependances JavaScript locales du
+moteur de reference GF128 et les tests reproductibles.
+
+Sur Linux x86-64 disposant des instructions CPU requises :
+
+```bash
+bash scripts/build.sh
+node scripts/verify.js
+QNE_REPORT=/tmp/qne_benchmark.json node scripts/benchmark.js
+sha256sum -c SOURCES_SHA256.txt
+```
+
+Les resultats sont des microbenchmarks et dependent de
+la machine et du protocole. Ils ne constituent pas un
+classement materiel independant.
